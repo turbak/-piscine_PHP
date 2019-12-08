@@ -11,9 +11,14 @@ else if ($_POST["checkout"] == "Рассчитать")
 	$data = unserialize(file_get_contents("private/checkout"));
 	$user = unserialize(file_get_contents("private/" . $_SESSION["loggued_on_user"]));
 	var_dump($user);
-	foreach ($user as $item => $value)
-		$entry = $item;
-	$data[] = $entry;
+	foreach ($user as $item => $value) {
+		if (!$data[$_SESSION["loggued_on_user"]][$item]) {
+			$data[$_SESSION["loggued_on_user"]][$item]["q"] = $value;
+			$data[$_SESSION["loggued_on_user"]][$item]["id"] = $item;
+		}
+		else
+			$data[$_SESSION["loggued_on_user"]][$item]["q"] += $value;
+	}
 	file_put_contents("private/checkout", serialize($data));
 }
 ?>

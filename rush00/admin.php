@@ -15,7 +15,7 @@ if ($_POST["submit"] == "Отправить" && $_POST["name"] && $_POST["id"] &
 	$entry["q"] = $_POST["q"];
 	$entry["price"] = $_POST["price"];
 	$entry["cat"] = $_POST["cat"];
-	$data[$_POST["id"]] = $entry;
+	$data[$_POST["id"]] = &$entry;
 	file_put_contents("private/database", serialize($data));
 	echo "entry added";
 }
@@ -51,7 +51,7 @@ include("remove.php");
 if(file_exists("private/database"))
 {
 	$data = unserialize(file_get_contents("private/database"));
-	foreach ($data as &$one)
+	foreach ($data as $one)
 	{
 		echo "<tr>";
 		echo "<td>". $one["name"] ."</td>";
@@ -67,25 +67,31 @@ if(file_exists("private/database"))
 </table>
 </form>
 <?php
-    $checkout = unserialize(file_get_contents("private/checkout"));
-    echo "
+if (file_exists("private/checkout")) {
+	$checkout = unserialize(file_get_contents("private/checkout"));
+	echo "
     <table>
         <tr>
             <th>User</th>
             <th>Price</th>
             <th>Quantity</th>
             <th>Category</th>
+            <th>Total</th>
         </tr>
         ";
-    foreach ($checkout as $user => $values){
-        var_dump($checkout);
-		echo "<tr>";
-		echo "<td>". $one["name"] ."</td>";
-		echo "<td>".$one["price"]."</td>";
-		echo "<td>".$one["q"]."</td>";
-		echo "<td>".$one["cat"]."</td>";
-		echo "</tr>";
-    }
+	foreach ($checkout as $user => $values) {
+		foreach ($values as $id => $count) {
+			$one = $data[$id];
+			echo "<tr>";
+			echo "<td>" . $user . "</td>";
+			echo "<td>" . $one["price"] . "</td>";
+			echo "<td>" . $count["q"] . "</td>";
+			echo "<td>" . $one["cat"] . "</td>";
+			echo "<td>" . ($count["q"] * $one["price"]) . " рублей" . "</td>";
+			echo "</tr>";
+		}
+	}
+}
 ?>
 </table>
 </body>

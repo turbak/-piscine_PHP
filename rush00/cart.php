@@ -77,7 +77,6 @@ else {
 		    ?>
             Рассчитать
         </button>
-		</button>
 		<form action="index.php">
     		<input class="button1" type="submit" value="Вернуться на главную">
 		</form>
