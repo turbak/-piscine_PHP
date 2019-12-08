@@ -56,8 +56,8 @@ if(file_exists("private/database"))
 		echo "<tr>";
 		echo "<td>". $one["name"] ."</td>";
 		echo "<td><img src=\"".$one["img"]."\"></td>";
-		echo "<td>".$one["q"]."</td>";
 		echo "<td>".$one["price"]."</td>";
+		echo "<td>".$one["q"]."</td>";
 		echo "<td>".$one["cat"]."</td>";
 		echo "<td>". "<button name=\"remid\" value=" . $one["id"] . ">Удалить</button> <br/>" . "<td>";
 		echo "</tr>";
@@ -65,6 +65,28 @@ if(file_exists("private/database"))
 }
 ?>
 </table>
-    </form>
+</form>
+<?php
+    $checkout = unserialize(file_get_contents("private/checkout"));
+    echo "
+    <table>
+        <tr>
+            <th>User</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Category</th>
+        </tr>
+        ";
+    foreach ($checkout as $user => $values){
+        var_dump($checkout);
+		echo "<tr>";
+		echo "<td>". $one["name"] ."</td>";
+		echo "<td>".$one["price"]."</td>";
+		echo "<td>".$one["q"]."</td>";
+		echo "<td>".$one["cat"]."</td>";
+		echo "</tr>";
+    }
+?>
+</table>
 </body>
 </html>

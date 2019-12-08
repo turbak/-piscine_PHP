@@ -71,6 +71,12 @@ else {
 			?>
             Очистить корзину
         </button>
+        <button type="submit" name="checkout" value="Рассчитать">
+		    <?php
+			    include("checkout.php");
+		    ?>
+            Рассчитать
+        </button>
 </form>
 
 </body>
