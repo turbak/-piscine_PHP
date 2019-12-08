@@ -13,6 +13,7 @@ session_start();
 <div class="grid-container1">
     <div>
         <img class="color5" src="https://media.rabota.ru/processor/logo/original/2018/06/21/pjaterochka.png">
+    </div>
     <div class="colorh">
         <a href="cart.php">
 			<a href="cart.php"><img class="basket" src="https://cdn0.iconfinder.com/data/icons/shopping-and-commerce-outline/512/Shopping_and_Commerce_-_Outline_26-512.png" title="Basket">
@@ -21,6 +22,7 @@ session_start();
             include("display.php");
         ?>
 	</div>
+
 <div class="grid-container2">
     <div class="color">
         <a href="menu.php">
