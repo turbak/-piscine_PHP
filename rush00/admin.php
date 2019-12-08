@@ -35,7 +35,7 @@ if ($_POST["submit"] == "Отправить" && $_POST["name"] && $_POST["id"] &
 	<p>Цена: <input type="text" name="price" /></p>
 	<p>Количество: <input type="text" name="q" /></p>
     <p>Категория: <input type="text" name="cat" /></p>
-	<p><input type="submit" name="submit" value="Отправить"/></p>
+	<p><input class="button1" type="submit" name="submit" value="Отправить"/></p>
 </form>
 <form action="admin.php" method="post">
 <table>
@@ -59,7 +59,7 @@ if(file_exists("private/database"))
 		echo "<td>".$one["q"]."</td>";
 		echo "<td>".$one["price"]."</td>";
 		echo "<td>".$one["cat"]."</td>";
-		echo "<td>". "<button name=\"remid\" value=" . $one["id"] . ">Удалить</button> <br/>" . "<td>";
+		echo "<td>". "<button class=\"button1\" name=\"remid\" value=" . $one["id"] . ">Удалить</button> <br/>" . "<td>";
 		echo "</tr>";
 	}
 }

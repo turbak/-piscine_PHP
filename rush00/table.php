@@ -10,7 +10,7 @@ if(file_exists("private/database"))
         echo "<td>".$one["q"]."</td>";
         echo "<td>".$one["price"]."</td>";
         echo "<td>".$one["cat"]."</td>";
-		echo "<td>". "<button name=\"itemid\" value=" . $one["id"] . ">Купить</button> <br/>" . "<td>";
+		echo "<td>". "<button class=\"button1\" name=\"itemid\" value=" . $one["id"] . ">Купить</button> <br/>" . "<td>";
         echo "</tr>";
     }
 }
