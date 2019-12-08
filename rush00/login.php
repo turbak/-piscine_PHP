@@ -14,6 +14,16 @@ else {
 	}
 	$file = fopen("private/" . $_SESSION["loggued_on_user"], "r");
 	flock($file, LOCK_EX);
+	$data = unserialize(file_get_contents("private/passwd"));
+	if ($data)
+	{
+		foreach ($data as $key => $val) {
+			if ($val["admin"] == 1 && $val["login"] === $login) {
+				$_SESSION["admin"] = true;
+				break;
+			}
+		}
+	}
 	$items = unserialize(file_get_contents("private/" . $_SESSION["loggued_on_user"], "w"));
 	if ($_SESSION["cart"]) {
 		foreach ($_SESSION["cart"] as $item => $count) {

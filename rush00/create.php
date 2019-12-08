@@ -23,6 +23,7 @@ else {
 	}
 	$account["login"] = $_POST["login"];
 	$account["passwd"] = hash("whirlpool", $_POST["passwd"]);
+	$account["admin"] = 0;
 	$data[] = $account;
 	file_put_contents("private/passwd", serialize($data));
 	if (!file_exists(("private/" . $account["login"]))) {
