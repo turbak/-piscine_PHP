@@ -35,7 +35,7 @@ session_start();
         </a>
     </div>
     <div class="color">
-        <a href="contacts.php">
+        <a href="contacts.html">
             <img class="contacts" src="https://i.pinimg.com/originals/93/4b/79/934b793dd7859f07c3862a38db94d368.png" title="Contacts">
         </a>
     </div>

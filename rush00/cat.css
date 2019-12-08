@@ -2,18 +2,27 @@ table {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
     border: 1px solid black;
 }
 td {
     width: 20%;
+    vertical-align: middle;
+    padding: 10px;
     font-size: 30px;
-    font-weight: bold;
-    font-family: Arial;
     text-align: center;
-    border: 1px solid black;
+    border-top: 2px solid rgb(122, 29, 1);
+    border-bottom: 2px solid #56433D;
+    border-right: 2px solid #56433D;
 }
 th {
     border: 1px solid black;
+    padding: 10px 20px;
+    background: rgb(41, 133, 5);
+    color: rgb(146, 15, 15);
+    border-right: 2px solid;
+    font-size: 0.9em;
 }
 img {
     width: 60px;

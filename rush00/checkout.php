@@ -10,7 +10,6 @@ else if ($_POST["checkout"] == "Рассчитать")
 		file_put_contents("private/checkout", null);
 	$data = unserialize(file_get_contents("private/checkout"));
 	$user = unserialize(file_get_contents("private/" . $_SESSION["loggued_on_user"]));
-	var_dump($user);
 	foreach ($user as $item => $value) {
 		if (!$data[$_SESSION["loggued_on_user"]][$item]) {
 			$data[$_SESSION["loggued_on_user"]][$item]["q"] = $value;

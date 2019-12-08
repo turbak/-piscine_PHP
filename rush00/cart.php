@@ -9,7 +9,7 @@ session_start();
     <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/42_Logo.svg/1200px-42_Logo.svg.png" type="image/png">
     <link rel="stylesheet" href="cat.css">
 </head>
-<body>
+<body class="bodycat">
 <h1>Каталог</h1>
 <form method="post">
     <table>
@@ -59,7 +59,7 @@ else {
 }
 ?>
     </table>
-        <button type="submit" name="clear" value="1">
+        <button class="button1" type="submit" name="clear" value="1">
 			<?php
 			if ($_POST["clear"] == "1")
 			{
@@ -71,14 +71,14 @@ else {
 			?>
             Очистить корзину
         </button>
-        <button type="submit" name="checkout" value="Рассчитать">
+        <button class="button1" type="submit" name="checkout" value="Рассчитать">
 		    <?php
 			    include("checkout.php");
 		    ?>
             Рассчитать
         </button>
 		<form action="index.php">
-    		<input class="button1" type="submit" value="Вернуться на главную">
+    		<input class="button1" type="submit" formaction="index.php" value="Вернуться на главную">
 		</form>
 </form>
 
