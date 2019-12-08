@@ -1,6 +1,6 @@
 <?php
 if ($_SESSION["loggued_on_user"] == "") {
-	echo "<a href=\"login.html\"><button>Регистрация/Вход</button></a>";
+	echo "<a href=\"login.html\"><img class=\"login\" src=\"http://cdn.onlinewebfonts.com/svg/img_568657.png\" title=\"Login\"></a>";
 	return;
 }
 else {
