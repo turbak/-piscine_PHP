@@ -30,7 +30,7 @@ session_start();
         </a>
     </div>
     <div class="color">
-        <a href="basket.php">
+        <a href="Catalog/kitchen.php">
             <img class="category" src="http://stavr-tools.ru/upload/medialibrary/e8a/katalog.jpg" title="Category">
         </a>
     </div>

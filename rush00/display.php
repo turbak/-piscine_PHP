@@ -7,7 +7,9 @@ else {
 	echo "<p>" . $_SESSION["loggued_on_user"] . "</p>";
 }
 ?>
+<div class="log">
 <form>
     <button type="submit" name="Delete" formaction="delete.php">Delete</button>
-	<button type="submit" name="Logout" formaction="logout.php">Logout</button><br />
+	<button type="submit" name="Logout" formaction="logout.php">Logout</button>
 </form>
+</div>
