@@ -22,7 +22,7 @@ session_start();
             include("display.php");
         ?>
 	</div>
-
+</div>
 <div class="grid-container2">
     <div class="color">
         <a href="menu.php">
