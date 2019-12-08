@@ -7,6 +7,7 @@ if ($_POST["itemid"]) {
 		else
 			$_SESSION["cart"][$_POST["itemid"]] += 1;
 		echo "Item added";
+		var_dump($_SESSION);
 	} else {
 		if (!file_exists(("../private/" . $_SESSION["loggued_on_user"]))) {
 			file_put_contents(("../private/" . $_SESSION["loggued_on_user"]), null);
