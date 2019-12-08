@@ -25,7 +25,7 @@ session_start();
 </div>
 <div class="grid-container2">
     <div class="color">
-        <a href="menu.php">
+        <a href="admin.php">
             <img class="home" src="https://media.istockphoto.com/illustrations/home-icon-red-round-button-illustration-id946516300?k=6&m=946516300&s=170667a&w=0&h=fFq7IV94t5Qfvbkgcytg_dIah5ZueVgM7PIGaVVyWSM=" title="Home">
         </a>
     </div>

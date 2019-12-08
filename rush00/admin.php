@@ -1,5 +1,7 @@
 <?php
 session_start();
+if (!$_SESSION["admin"])
+    header("Location: index.php");
 if ($_POST["submit"] == "Отправить" && $_POST["name"] && $_POST["id"] && $_POST["img"] && $_POST["price"])
 {
 	if (!file_exists("private"))
