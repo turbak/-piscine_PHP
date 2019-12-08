@@ -1,0 +1,75 @@
+
+.grid-container1 {
+    display: grid;
+    text-align: center;
+    grid-template-rows: 100%;
+    grid-template-columns: 75% 25%;
+}
+.grid-container2 {
+    display: grid;
+    text-align: center;
+    grid-template-rows:  100%;
+    grid-template-columns: 33% 33% 33%;
+}
+.grid-container3 {
+    display: grid;
+    text-align: center;
+    grid-template-rows:  100%;
+    grid-template-columns: 100%;
+}
+.colorh {
+    float: left;
+    background-color: rgb(240, 26, 26);
+    border-radius: 40px;
+    border-color: rgb(240, 26, 26);
+    text-align: center;
+    border: 2px solid green;
+    margin: 1px 1px 1px 1px;
+}
+.basket {
+    width: 15%;
+    height: 50%;
+    margin: 7% 5% 3% 3%;
+}
+.color5 {
+    width: 50%;
+    height: 100%;
+    margin: 1px 1px 1px 1px;
+}
+.login {
+    width: 15%;
+    height: 50%;
+    margin: 3% 3% 3% 3%;
+}
+.colorm {
+    text-align: center;
+
+}
+.category {
+    width: 100%;
+    height: 100%;
+    margin: 10% 10% 10% 1%;
+}
+.home {
+    width: 25%;
+    height: 50%;
+    margin: 10% 10% 10% 10%;
+}
+.contacts {
+    width: 25%;
+    height: 50%;
+    margin: 10% 10% 10% 10%;
+}
+.chati {
+    background-color: rgb(27, 163, 27);
+    color: rgb(190, 21, 21);
+    width: 100%;
+    height: 750px;
+    margin: 1px 1px 1px 1px;
+}
+.texti {
+    background-color: rgb(27, 163, 27);
+    color: rgb(190, 21, 21);
+    height: 47px;
+    width: 100%;
+}
