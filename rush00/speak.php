@@ -15,8 +15,9 @@
         $check = fopen("private/chat", "r+");
         if (flock($check, LOCK_EX) && $_POST["send"] === "send")
         {
-            $messages[] = array("login" => $_SESSION["loggued_on_user"], "time" => date("Y-m-d H:i",time()), "msg" => $_POST["msg"]);
-            file_put_contents("private/chat", serialize($messages));
+            $data = unserialize(file_get_contents("private/chat"));
+            $data[] = array("login" => $_SESSION["loggued_on_user"], "time" => time(), "msg" => $_POST["msg"]);
+            file_put_contents("private/chat", serialize($data));
             fclose($check);
         }
     }

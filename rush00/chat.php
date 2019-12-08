@@ -18,7 +18,7 @@
 			if ($messages)
 			{
 				foreach ($messages as &$one) {
-					echo "[" . $one["time"] . "]<b>" . $one["login"] . "</b>: " . $one["msg"] . "<br>";
+					echo "[" .  date("H:i",$one["time"]) . "]<b>" . $one["login"] . "</b>: " . $one["msg"] . "<br>";
 				}
 			}
 		}
