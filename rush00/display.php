@@ -8,7 +8,7 @@ else {
 }
 ?>
 <div class="log">
-<form>
+<form class="button1">
     <button type="submit" name="Delete" formaction="delete.php">Delete</button>
 	<button type="submit" name="Logout" formaction="logout.php">Logout</button>
 </form>

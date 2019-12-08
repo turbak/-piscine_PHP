@@ -1,6 +1,5 @@
 <?php
 session_start();
-var_dump($_POST);
 if ($_POST["itemid"]) {
 	if ($_SESSION["loggued_on_user"] == "") {
 		if (!$_SESSION["cart"][$_POST["itemid"]])

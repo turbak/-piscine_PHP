@@ -10,8 +10,11 @@ include("buy.php");
     <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/42_Logo.svg/1200px-42_Logo.svg.png" type="image/png">
     <link rel="stylesheet" href="cat.css">
 </head>
-<body>
+<body class="bodycat">
     <h1>Каталог</h1>
+    <form action="index.php">
+    	<input class="button1" type="submit" value="Вернуться на главную">
+	</form>
     <form method="post">
     <table>
         <tr>
