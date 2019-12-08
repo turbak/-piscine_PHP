@@ -1,29 +1,40 @@
 <?php
 session_start();
+?>
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Каталог</title>
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/42_Logo.svg/1200px-42_Logo.svg.png" type="image/png">
+    <link rel="stylesheet" href="cat.css">
+</head>
+<body>
+<h1>Каталог</h1>
+<form method="post">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>IMG</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Category</th>
+        </tr>
+<?php
+$base = unserialize(file_get_contents("private/database", "r"));
 if (($_SESSION['loggued_on_user']) == "") {
 	$count2 = 0;
     if ($_SESSION["cart"] != null) {
 		foreach ($_SESSION["cart"] as $item => $count) {
-			if ($item == 1)
-				echo "Первой плитки " . $count . "<br />";
-			else if ($item == 2)
-				echo "Второй плитки " . $count . "<br />";
-			else if ($item == 3)
-				echo "Третьей плитки " . $count . "<br />";
-			else if ($item == 4)
-				echo "Четвертой плитки " . $count . "<br />";
-			else if ($item == 5)
-				echo "Пятой плитки " . $count . "<br />";
-			else if ($item == 6)
-				echo "Шестой плитки " . $count . "<br />";
-			else if ($item == 7)
-				echo "Седьмой плитки " . $count . "<br />";
-			else if ($item == 8)
-				echo "Восьмой плитки " . $count . "<br />";
-			else if ($item == 9)
-				echo "Девятой плитки " . $count . "<br />";
-			$count2 += $count;
-		}
+            $one = $base[$item];
+				echo "<tr>";
+				echo "<td>". $one["name"] ."</td>";
+				echo "<td><img src=\"".$one["img"]."\"></td>";
+				echo "<td>".$count."</td>";
+				echo "<td>".($one["price"] * $count)."</td>";
+				echo "<td>".$one["cat"]."</td>";
+				echo "</tr>";
+			}
 	}
 }
 
@@ -34,61 +45,33 @@ else {
 		if ($items)
 		{
 			foreach ($items as $item => $count) {
-				if ($item == 1)
-					echo "Первой плитки " . $count . "<br />";
-				else if ($item == 2)
-					echo "Второй плитки " . $count . "<br />";
-				else if ($item == 3)
-					echo "Третьей плитки " . $count . "<br />";
-				else if ($item == 4)
-					echo "Четвертой плитки " . $count . "<br />";
-				else if ($item == 5)
-					echo "Пятой плитки " . $count . "<br />";
-				else if ($item == 6)
-					echo "Шестой плитки " . $count . "<br />";
-				else if ($item == 7)
-					echo "Седьмой плитки " . $count . "<br />";
-				else if ($item == 8)
-					echo "Восьмой плитки " . $count . "<br />";
-				else if ($item == 9)
-					echo "Девятой плитки " . $count . "<br />";
-				$count2 += $count;
+				$one = $base[$item];
+				echo "<tr>";
+				echo "<td>". $one["name"] ."</td>";
+				echo "<td><img src=\"".$one["img"]."\"></td>";
+				echo "<td>".$count."</td>";
+				echo "<td>".($one["price"] * $count)."</td>";
+				echo "<td>".$one["cat"]."</td>";
+				echo "</tr>";
 			}
 		}
 	}
 }
-echo "Всего " . $count2 . " вещей в корзине<br/>";
 ?>
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<a href="index.php">На главную</a>
-<form method="post">
-<button type="submit" name="clear" value="1">
-    <?php
-    if ($_POST["clear"] == "1")
-    {
-        if ($_SESSION["loggued_on_user"] == "")
-            $_SESSION["cart"] = null;
-        else
-            file_put_contents("private/" . $_SESSION["loggued_on_user"], null);
-    }
-    ?>
-    Очистить корзину
-</button>
-	<button type="submit" name="checkout" value="2">
-		<?php
-		if ($count != 0 && ($_POST["checkoutr"] == "2")) {
-			include("checkout.php");
-		}
-		?>
-		Checkout
-	</button>
+    </table>
+        <button type="submit" name="clear" value="1">
+			<?php
+			if ($_POST["clear"] == "1")
+			{
+				if ($_SESSION["loggued_on_user"] == "")
+					$_SESSION["cart"] = null;
+				else
+					file_put_contents("private/" . $_SESSION["loggued_on_user"], null);
+			}
+			?>
+            Очистить корзину
+        </button>
 </form>
+
 </body>
 </html>

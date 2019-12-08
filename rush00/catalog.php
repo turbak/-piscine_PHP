@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("buy.php");
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -11,6 +12,7 @@ session_start();
 </head>
 <body>
     <h1>Каталог</h1>
+    <form method="post">
     <table>
         <tr>
             <th>Name</th>
@@ -23,5 +25,6 @@ session_start();
     include ("table.php")
 ?>
 </table>
+    </form>
 </body>
 </html>
