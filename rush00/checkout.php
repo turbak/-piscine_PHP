@@ -10,14 +10,17 @@ else if ($_POST["checkout"] == "Рассчитать")
 		file_put_contents("private/checkout", null);
 	$data = unserialize(file_get_contents("private/checkout"));
 	$user = unserialize(file_get_contents("private/" . $_SESSION["loggued_on_user"]));
-	foreach ($user as $item => $value) {
-		if (!$data[$_SESSION["loggued_on_user"]][$item]) {
-			$data[$_SESSION["loggued_on_user"]][$item]["q"] = $value;
-			$data[$_SESSION["loggued_on_user"]][$item]["id"] = $item;
+	if ($user) {
+		foreach ($user as $item => $value) {
+			if (!$data[$_SESSION["loggued_on_user"]][$item]) {
+				$data[$_SESSION["loggued_on_user"]][$item]["q"] = $value;
+				$data[$_SESSION["loggued_on_user"]][$item]["id"] = $item;
+			} else
+				$data[$_SESSION["loggued_on_user"]][$item]["q"] += $value;
 		}
-		else
-			$data[$_SESSION["loggued_on_user"]][$item]["q"] += $value;
+		file_put_contents("private/checkout", serialize($data));
 	}
-	file_put_contents("private/checkout", serialize($data));
+	else
+		echo "В корзине нет товаров";
 }
 ?>
