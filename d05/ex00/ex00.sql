@@ -1,1 +1,1 @@
-CREATE DATABASE db_cauranus
+CREATE DATABASE db_cauranus;
