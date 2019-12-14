@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .balloon {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            border-radius: 200px;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let balloon = '';
+        let size = 200;
+        let counter = 0;
+        $(function() {
+            balloon = $('#balloon');
+            balloon.click(increase);
+            balloon.mouseleave(decrease);
+        });
+
+        function decrease() {
+            if (size > 200)
+            {
+                size = size - 5 < 200 ? 200 : size - 5;
+                counter--;
+                balloon.css("width", size);
+                balloon.css("height", size);
+            }
+            color()
+        }
+        function increase() {
+            if (size < 420) {
+                size += 10;
+                 balloon.css("width", size);
+                 balloon.css("height", size);
+            }
+            else {
+                size = 200;
+                 balloon.css("width", size);
+                 balloon.css("height", size);
+            }
+            counter++;
+            color();
+        }
+
+        function color() {
+            if (counter < 0)
+                counter = 2;
+            if (counter > 2)
+                counter = 0;
+            if (counter === 0)
+                balloon.css("backgroundColor", "red");
+            else if (counter === 1)
+                balloon.css("backgroundColor", "green");
+            else if (counter === 2) {
+                balloon.css("backgroundColor", "blue");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="balloon" class="balloon">
+    </div>
+</body>
+</html>

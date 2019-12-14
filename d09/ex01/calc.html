@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        setInterval('alert("Please, use me...")', 30000);
+        function calc(obj) {
+            var leftval = Number(document.getElementById("left").value);
+            var rightval = Number(document.getElementById("right").value);
+            var op = document.getElementById("ops");
+            var option = op.options[op.selectedIndex].text;
+            if (!(leftval >= 0 && rightval >= 0))
+                output("Error :(");
+            leftval = parseInt(leftval);
+            rightval = parseInt(rightval);
+            if (option === '%' || option === '/' && rightval === 0)
+                output("It’s over 9000!");
+            else if (option === '%')
+                output(leftval % rightval);
+            else if (option === '/')
+                output(leftval / rightval);
+            else if (option === '+') {
+                output((leftval + rightval));
+            }
+            else if (option === '-')
+                output(leftval - rightval);
+            else if (option === '*')
+                output(leftval * rightval);
+        }
+
+        function output(value) {
+            console.log(value);
+            alert(value);
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="return calc(this);">
+        <input id="left" type="text" name="leftval">
+        <select id="ops">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+            <option>%</option>
+        </select>
+        </label><input type="text" id="right" name="rightval">
+        <input type="submit" name="submit" value="Try me!">
+    </form>
+</body>
+</html>

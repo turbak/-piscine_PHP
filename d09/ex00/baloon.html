@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .size {
+            height: 200px;
+            width: 200px;
+            background-color: red;
+            border-radius: 200px;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let size = 200;
+        let counter = 0;
+        window.onload = function () {
+            document.getElementById("balloon").addEventListener('click', increase);
+            document.getElementById("balloon").addEventListener('mouseleave', decrease);
+        }
+
+        function decrease() {
+            if (size > 200)
+            {
+                size = size - 5 < 200 ? 200 : size - 5;
+                counter--;
+                document.getElementById("balloon").style.width = size + 'px';
+                document.getElementById("balloon").style.height = size + 'px'
+            }
+            color()
+        }
+        function increase() {
+            if (size < 420) {
+                size += 10;
+                document.getElementById("balloon").style.width = size + 'px';
+                document.getElementById("balloon").style.height = size + 'px';
+            }
+            else {
+                size = 200;
+                document.getElementById("balloon").style.width = size + 'px';
+                document.getElementById("balloon").style.height = size + 'px';
+            }
+            counter++;
+            color();
+        }
+
+        function color() {
+            if (counter < 0)
+                counter = 2;
+            if (counter > 2)
+                counter = 0;
+            if (counter == 0)
+                document.getElementById("balloon").style.backgroundColor = 'red';
+            else if (counter == 1)
+                document.getElementById("balloon").style.backgroundColor = 'green';
+            else if (counter == 2) {
+                document.getElementById("balloon").style.backgroundColor = 'blue';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="balloon" class="size">
+    </div>
+</body>
+</html>

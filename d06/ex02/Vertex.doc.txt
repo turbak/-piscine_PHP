@@ -1,0 +1,17 @@
+
+<- Vertex ----------------------------------------------------------------------
+The Vertex class handles Vertex coordinates.
+
+An instance can be constructed like
+new Vertex( array( 'x' => 0.0, 'y' => 0.0, 'z' => 0.0 ) );
+
+or
+
+new Vertex( array( 'x' => 0.0, 'y' => 0.0, 'z' => 1.0, 'color' => $blue  ) );
+to include the color in Vertex
+
+optional attributes 'w' and 'color' are set to 1.0 and white by default
+respectably
+
+This class implements getters and setters for all the attributes
+---------------------------------------------------------------------- Vertex ->

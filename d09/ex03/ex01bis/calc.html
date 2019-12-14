@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <title>Title</title>
+    <script>
+        setInterval('alert("Please, use me...")', 30000);
+        function calc() {
+            const option = $("#ops option:selected").val();
+            let leftval = Number($("#left").val());
+            let rightval = Number($("#right").val());
+            if (!(leftval >= 0 && rightval >= 0))
+                output("Error :(");
+            if (option === '%' || option === '/' && rightval === 0)
+                output("It’s over 9000!");
+            else if (option === '%')
+                output(leftval % rightval);
+            else if (option === '/')
+                output(leftval / rightval);
+            else if (option === '+')
+                output((leftval + rightval));
+            else if (option === '-')
+                output(leftval - rightval);
+            else if (option === '*')
+                output(leftval * rightval);
+        }
+
+        function output(value) {
+            console.log(value);
+            alert(value);
+        }
+    </script>
+</head>
+<body>
+    <form onsubmit="calc()">
+        <input id="left" type="text" name="leftval">
+        <select id="ops">
+            <option>+</option>
+            <option>-</option>
+            <option>*</option>
+            <option>/</option>
+            <option>%</option>
+        </select>
+        </label><input type="text" id="right" name="rightval">
+        <input type="submit" name="submit" value="Try me!">
+    </form>
+</body>
+</html>

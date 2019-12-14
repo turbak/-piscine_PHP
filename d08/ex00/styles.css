@@ -1,0 +1,42 @@
+.buttonsmall {
+    padding:1px 1px;
+    background:#ccc;
+    font-size: 0;
+    border:0 none;
+    cursor:pointer;
+}
+.td {
+    height: 1px;
+    width: 1px;
+}
+th, td {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+table {
+    float: left;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 1px solid black;
+}
+.cellp1 {
+    background-color: black;
+}
+.cellp2 {
+    background-color: red;
+}
+.cellobs {
+    background-color: green;
+}
+.cell {
+    width: 10px;
+    height: 10px;
+}
+
+.panel {
+    float: left;
+    align-content: center;
+}
